@@ -1,0 +1,434 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>fbise resulte check 1st anual </title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f2f3f8;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 850px;
+        background: white;
+        border-radius: 12px;
+        padding: 45px 42px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    }
+
+    .logo {
+        width: 90px;
+        height: 90px;
+        border: 3px solid #243f5c;
+        border-radius: 50%;
+        margin: 0 auto 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #243f5c;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 1.2;
+    }
+
+    h1 {
+        text-align: center;
+        color: #294663;
+        font-size: 28px;
+        line-height: 1.25;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        text-align: center;
+        color: #777;
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+
+    .search-box {
+        border: 2px solid #3c963d;
+        border-radius: 10px;
+        padding: 38px 25px;
+        text-align: center;
+    }
+
+    .exam-title {
+        font-size: 22px;
+        color: #555;
+        margin-bottom: 28px;
+    }
+
+    label {
+        display: block;
+        font-size: 17px;
+        margin-bottom: 8px;
+        color: #222;
+    }
+
+    input {
+        width: 100%;
+        max-width: 350px;
+        height: 42px;
+        border: 1px solid #555;
+        border-radius: 6px;
+        padding: 0 12px;
+        font-size: 17px;
+        outline: none;
+    }
+
+    input:focus {
+        border-color: #1769e0;
+    }
+
+    button {
+        margin-top: 20px;
+        background: #1769e0;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 27px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0d55bd;
+    }
+
+    .info {
+        margin-top: 30px;
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .info-title {
+        color: green;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .notice {
+        margin-top: 25px;
+        padding: 12px;
+        background: #fff7d6;
+        border-radius: 6px;
+        color: #705d00;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    /* RESULT */
+
+    #result {
+        display: none;
+        margin-top: 30px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .result-header {
+        background: #294663;
+        color: white;
+        padding: 18px;
+        text-align: center;
+    }
+
+    .result-header h2 {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    .student-info {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        background: #fafafa;
+    }
+
+    .info-card {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .info-card strong {
+        display: block;
+        color: #555;
+        font-size: 13px;
+        margin-bottom: 3px;
+    }
+
+    .info-card span {
+        font-size: 16px;
+        color: #111;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    th {
+        background: #eef2f5;
+        color: #333;
+    }
+
+    .total {
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .passed {
+        color: green;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .disclaimer {
+        text-align: center;
+        font-size: 11px;
+        color: #888;
+        margin-top: 20px;
+    }
+
+    @media(max-width:600px) {
+        .container {
+            padding: 25px 18px;
+        }
+
+        h1 {
+            font-size: 23px;
+        }
+
+        .exam-title {
+            font-size: 18px;
+        }
+
+        .student-info {
+            grid-template-columns: 1fr;
+        }
+
+        th, td {
+            font-size: 13px;
+            padding: 9px 5px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+
+<div class="container">
+        <div class="logo" style="border: none;">
+    <img src="logo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain;">
+</div>
+    
+    <h1>Federal Board of Intermediate and Secondary Education Islamabad</h1>
+
+    <div class="subtitle">
+        Secondary & Intermediate Education
+    </div>
+
+    <div class="search-box">
+
+        <div class="exam-title">
+            RESULT OF SSC MATRIC TECH 1st ANNUAL EXAMINATIONS 2026
+        </div>
+
+        <label for="roll">Enter Roll No:</label>
+
+        <input
+            type="text"
+            id="roll"
+            placeholder="Enter Roll Number"
+        >
+
+        <br>
+
+        <button onclick="checkResult()">
+            Search
+        </button>
+
+        <div class="info">
+            <div class="info-title">
+                The result is also available through:
+            </div>
+
+            <p>
+            1. By sending SMS on 5050 with the format: FB(Space)[Roll Number] to obtain result on Mobile.
+            </p>
+
+            <p>
+            2.Telephone Exchange by calling (051) 9269555--59
+            </p>
+        </div>
+
+    
+
+        <div id="result">
+
+            <div class="result-header">
+                <h2>Result Card</h2>
+                <div>SSC Annual Examination 2026</div>
+            </div>
+
+            <div class="student-info">
+
+                <div class="info-card">
+                    <strong>Roll Number</strong>
+                    <span id="showRoll"></span>
+                </div>
+
+                <div class="info-card">
+                    <strong>Student Name</strong>
+                    <span>Muhammad Huzaifa</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>Father's Name</strong>
+                    <span>Muhammad Ahmed</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>Group</strong>
+                    <span>Science</span>
+                </div>
+
+            </div>
+
+            <table>
+
+                <tr>
+                    <th>Subject</th>
+                    <th>Total</th>
+                    <th>Obtained</th>
+                    <th>Grade</th>
+                </tr>
+
+                <tr>
+                    <td>English</td>
+                    <td>100</td>
+                    <td>82</td>
+                    <td>A</td>
+                </tr>
+
+                <tr>
+                    <td>Mathematics</td>
+                    <td>100</td>
+                    <td>91</td>
+                    <td>A+</td>
+                </tr>
+
+                <tr>
+                    <td>Physics</td>
+                    <td>100</td>
+                    <td>85</td>
+                    <td>A</td>
+                </tr>
+
+                <tr>
+                    <td>Chemistry</td>
+                    <td>100</td>
+                    <td>88</td>
+                    <td>A</td>
+                </tr>
+
+                <tr>
+                    <td>Computer Science</td>
+                    <td>100</td>
+                    <td>94</td>
+                    <td>A+</td>
+                </tr>
+
+            </table>
+
+            <div class="total">
+                <div>
+                    Total Marks: <b>500</b>
+                </div>
+
+                <div>
+                    Obtained Marks: <b>440</b>
+                </div>
+
+                <div>
+                    Percentage: <b>88%</b>
+                </div>
+
+                <br>
+
+                <div class="passed">
+                    PASS
+                </div>
+            </div>
+                <div class="passed">
+                    PASS
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+</div>
+
+
+<script>
+function checkResult() {
+
+    const rollNumber = document.getElementById("roll").value.trim();
+
+    if (rollNumber === "1009495") {
+        window.location.href = "1009495.html";
+    }
+
+    else if (rollNumber === "1010845") {
+        window.location.href = "1010845.html";
+    }
+
+    else if (rollNumber === "9511159") {
+        window.location.href = "9511159.html";
+    }
+
+    else if (rollNumber === "9017391") {
+        window.location.href = "9017391.html";
+    }
+
+    else {
+        alert("No result found.");
+    }
+}
+</script>
+</body>
+</html><!DOCTYPE html>
